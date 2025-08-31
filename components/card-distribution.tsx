@@ -42,7 +42,7 @@ export function CardDistribution({
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [cardRevealed, setCardRevealed] = useState(false);
   const [playersWhoSawCard, setPlayersWhoSawCard] = useState<Set<number>>(
-    new Set(),
+    new Set()
   );
 
   const currentPlayer = gameData.players[currentPlayerIndex];
@@ -132,8 +132,8 @@ export function CardDistribution({
                         playersWhoSawCard.has(index)
                           ? "bg-green-500"
                           : index === currentPlayerIndex
-                            ? "bg-primary"
-                            : "bg-muted"
+                          ? "bg-primary"
+                          : "bg-muted"
                       }`}
                     />
                   ))}
@@ -156,15 +156,22 @@ export function CardDistribution({
           <Card className="text-center border border-border shadow-lg">
             <CardHeader className="pb-4">
               <CardTitle className="text-xl sm:text-2xl">
-                {currentPlayer?.name}
-                {translateText("'s Turn", language)}
+                <span className="bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent font-bold text-2xl sm:text-3xl">
+                  {currentPlayer?.name}
+                </span>
+                <div className="mt-1 text-lg font-medium text-muted-foreground">
+                  {translateText("'s Turn", language)}
+                </div>
               </CardTitle>
               <CardDescription className="text-sm">
                 {translateText("Pass the device to", language)}{" "}
-                <strong>{currentPlayer?.name}</strong>.{" "}
+                <span className="font-semibold text-primary">
+                  {currentPlayer?.name}
+                </span>
+                .{" "}
                 {translateText(
                   '. They should tap "Reveal Card" to see their role privately.',
-                  language,
+                  language
                 )}
               </CardDescription>
             </CardHeader>
@@ -195,32 +202,10 @@ export function CardDistribution({
                         <div className="text-xl sm:text-2xl font-bold mb-2 text-white">
                           {translateText("IMPOSTER", language)}
                         </div>
-                        {gameData.useClue && (
-                          <div className="text-sm opacity-90 leading-relaxed mb-2 p-2 bg-gradient-to-r from-blue-900/60 to-purple-900/60 rounded-lg border border-blue-500/50 shadow-lg backdrop-blur-sm">
-                            <div className="flex items-center mb-2">
-                              <div className="text-yellow-300 mr-2 text-sm">
-                                💡
-                              </div>
-                              <div className="font-semibold text-white text-xs">
-                                {translateText(
-                                  "You are the imposter. Here's a clue about the word:",
-                                  language,
-                                )}
-                              </div>
-                            </div>
-                            <div className="italic text-white bg-black/50 p-2 rounded-lg border-l-4 border-blue-400 shadow-inner">
-                              <div className="text-xs leading-relaxed">
-                                "
-                                {getClueForWord(gameData.currentWord, language)}
-                                "
-                              </div>
-                            </div>
-                          </div>
-                        )}
                         <div className="text-xs opacity-90 leading-relaxed text-gray-100 text-center px-2">
                           {translateText(
                             "Listen carefully and blend in!",
-                            language,
+                            language
                           )}
                         </div>
                       </>
@@ -236,7 +221,7 @@ export function CardDistribution({
                         <div className="text-xs opacity-90 leading-relaxed text-gray-100">
                           {translateText(
                             "Give clues about this word, but watch out for the imposter",
-                            language,
+                            language
                           )}
                           {gameData.imposterCount > 1
                             ? translateText("s", language)
@@ -246,6 +231,26 @@ export function CardDistribution({
                       </>
                     )}
                   </div>
+
+                  {/* Clue Section - Below the Card */}
+                  {isImposter && gameData.useClue && (
+                    <div className="mt-4 p-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/30 shadow-lg backdrop-blur-sm">
+                      <div className="flex items-center mb-2">
+                        <div className="text-yellow-300 mr-2 text-sm">💡</div>
+                        <div className="font-semibold text-foreground text-sm">
+                          {translateText(
+                            "You are the imposter. Here's a clue about the word:",
+                            language
+                          )}
+                        </div>
+                      </div>
+                      <div className="italic text-foreground bg-background/50 p-3 rounded-lg border-l-4 border-blue-400 shadow-inner">
+                        <div className="text-sm leading-relaxed">
+                          "{getClueForWord(gameData.currentWord, language)}"
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="flex gap-3">
                     {currentPlayerIndex > 0 && (
@@ -279,7 +284,7 @@ export function CardDistribution({
                     ) : (
                       <Button
                         onClick={onStartPlaying}
-                        className={`flex-1 h-12 shadow-lg hover:shadow-xl transition-all duration-300 animate-button-ripple ${
+                        className={`flex-1 h-12 shadow-lg hover:shadow-xl transition-all duration-300 animate-button-ripple rounded-full ${
                           allPlayersSawCards
                             ? "animate-button-pulse animate-button-glow"
                             : ""
@@ -291,6 +296,26 @@ export function CardDistribution({
                       </Button>
                     )}
                   </div>
+
+                  {/* Starting Player Info */}
+                  {allPlayersSawCards && (
+                    <div className="mt-4 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg border border-primary/20">
+                      <div className="text-center">
+                        <div className="text-sm font-medium text-primary mb-2">
+                          {translateText(
+                            "Discussion will start with a random player",
+                            language
+                          )}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {translateText(
+                            "Anyone can start, including imposters",
+                            language
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="flex gap-3 mt-3">
                     <Button
@@ -319,7 +344,7 @@ export function CardDistribution({
                   <span>
                     {translateText(
                       "Pass the device to each player in turn",
-                      language,
+                      language
                     )}
                   </span>
                 </li>
@@ -328,7 +353,7 @@ export function CardDistribution({
                   <span>
                     {translateText(
                       'Each player taps "Reveal Card" to see their role privately',
-                      language,
+                      language
                     )}
                   </span>
                 </li>
@@ -338,11 +363,11 @@ export function CardDistribution({
                     {gameData.imposterCount === 1
                       ? translateText(
                           "One player is secretly the imposter and won't see the word",
-                          language,
+                          language
                         )
                       : `${gameData.imposterCount} ${translateText(
                           "players are secretly imposters and won't see the word",
-                          language,
+                          language
                         )}`}
                   </span>
                 </li>
@@ -351,7 +376,7 @@ export function CardDistribution({
                   <span>
                     {translateText(
                       "Everyone else sees the secret word",
-                      language,
+                      language
                     )}
                   </span>
                 </li>
@@ -360,7 +385,7 @@ export function CardDistribution({
                   <span>
                     {translateText(
                       "Once everyone has seen their card, the discussion begins!",
-                      language,
+                      language
                     )}
                   </span>
                 </li>

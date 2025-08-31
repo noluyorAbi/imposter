@@ -647,6 +647,66 @@ export const WORD_CLUES: Record<
     de: "Kunst",
     tr: "Sanat",
   },
+  Mountain: {
+    en: "Tall",
+    de: "Hoch",
+    tr: "Uzun",
+  },
+  Bridge: {
+    en: "Crossing",
+    de: "Überquerung",
+    tr: "Geçiş",
+  },
+  Pyramids: {
+    en: "Egypt",
+    de: "Ägypten",
+    tr: "Mısır",
+  },
+  "Eiffel Tower": {
+    en: "Paris",
+    de: "Paris",
+    tr: "Paris",
+  },
+  "Great Wall": {
+    en: "China",
+    de: "China",
+    tr: "Çin",
+  },
+  "Taj Mahal": {
+    en: "India",
+    de: "Indien",
+    tr: "Hindistan",
+  },
+  Colosseum: {
+    en: "Rome",
+    de: "Rom",
+    tr: "Roma",
+  },
+  "Machu Picchu": {
+    en: "Peru",
+    de: "Peru",
+    tr: "Peru",
+  },
+  Stonehenge: {
+    en: "England",
+    de: "England",
+    tr: "İngiltere",
+  },
+  "Sydney Opera House": {
+    en: "Australia",
+    de: "Australien",
+    tr: "Avustralya",
+  },
+  "Statue of Liberty": {
+    en: "New York",
+    de: "New York",
+    tr: "New York",
+  },
+  "Mount Everest": {
+    en: "Tallest",
+    de: "Höchster",
+    tr: "En Yüksek",
+  },
 
   // Jobs & Professions
   Teacher: {
@@ -931,11 +991,6 @@ export const WORD_CLUES: Record<
     en: "Colorful",
     de: "Bunt",
     tr: "Renkli",
-  },
-  Mountain: {
-    en: "Tall",
-    de: "Hoch",
-    tr: "Uzun",
   },
   Ocean: {
     en: "Large",

@@ -34,7 +34,7 @@ interface GameSetupProps {
     word: string,
     category: string,
     imposterCount: number,
-    useClue: boolean,
+    useClue: boolean
   ) => void;
   onBack: () => void;
   language?: string;
@@ -232,7 +232,7 @@ export function GameSetup({
                       size="sm"
                       onClick={() =>
                         setImposterCount(
-                          Math.min(maxImposters, imposterCount + 1),
+                          Math.min(maxImposters, imposterCount + 1)
                         )
                       }
                       disabled={imposterCount >= maxImposters}
@@ -280,7 +280,7 @@ export function GameSetup({
                   {useClue
                     ? translateText(
                         "The imposter will get a clue about the word",
-                        language,
+                        language
                       )
                     : translateText("No clues will be given", language)}
                 </div>
@@ -382,7 +382,7 @@ export function GameSetup({
                 disabled={!canStartRandom}
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto text-base sm:text-xl px-6 sm:px-10 py-6 sm:py-8 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 bg-card border-border hover:border-foreground hover:bg-foreground hover:text-background hover:scale-105 group disabled:opacity-50 disabled:hover:scale-100 animate-luxury-hover animate-button-ripple font-semibold"
+                className="w-full sm:w-auto text-base sm:text-xl px-8 sm:px-12 py-6 sm:py-8 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 bg-card border-border hover:border-foreground hover:bg-foreground hover:text-background hover:scale-105 group disabled:opacity-50 disabled:hover:scale-100 animate-luxury-hover animate-button-ripple font-semibold rounded-full"
               >
                 <Dices className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
                 {translateText("Surprise Me", language)}
@@ -392,7 +392,7 @@ export function GameSetup({
                 onClick={handleStartGame}
                 disabled={!canStart}
                 size="lg"
-                className={`w-full sm:w-auto text-base sm:text-xl px-6 sm:px-10 py-6 sm:py-8 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 bg-foreground text-background hover:bg-foreground/90 hover:scale-105 group disabled:opacity-50 disabled:hover:scale-100 animate-luxury-hover animate-button-ripple font-semibold ${
+                className={`w-full sm:w-auto text-base sm:text-xl px-8 sm:px-12 py-6 sm:py-8 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 bg-foreground text-background hover:bg-foreground/90 hover:scale-105 group disabled:opacity-50 disabled:hover:scale-100 animate-luxury-hover animate-button-ripple font-semibold rounded-full ${
                   canStart ? "animate-button-pulse animate-button-glow" : ""
                 }`}
               >

@@ -31,10 +31,10 @@ interface WelcomeScreenProps {
 
 export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(
-    SUPPORTED_LANGUAGES[0],
+    SUPPORTED_LANGUAGES[0]
   );
   const [translations, setTranslations] = useState<{ [key: string]: string }>(
-    {},
+    {}
   );
   const [isTranslating, setIsTranslating] = useState(false);
 
@@ -71,7 +71,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
     endlessDesc:
       "Carefully curated words ensure every round feels fresh and challenging",
     madeWithCare: "Made with Care",
-    craftedBy: "Crafted by me for you",
+    craftedBy: "Crafted by alpi for you",
     craftedDesc:
       "Because great games shouldn't be locked behind app stores, subscriptions, or paywalls. This is what happens when you build something purely for the joy of playing together.",
   };
@@ -90,7 +90,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
         try {
           newTranslations[key] = await translateText(
             text,
-            selectedLanguage.code,
+            selectedLanguage.code
           );
         } catch (error) {
           newTranslations[key] = text;
@@ -227,10 +227,30 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             onClick={() => onStart(selectedLanguage)}
             disabled={isTranslating}
             size="lg"
-            className="text-xl px-12 py-8 h-auto bg-foreground text-background hover:bg-foreground/90 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group font-semibold disabled:opacity-50 animate-button-ripple animate-button-float animate-button-sparkle"
+            className="relative text-xl px-16 py-10 h-auto bg-gradient-to-r from-foreground via-foreground to-foreground/90 text-background hover:from-foreground/90 hover:via-foreground hover:to-foreground transition-all duration-500 shadow-2xl hover:shadow-3xl group font-semibold disabled:opacity-50 animate-button-pulse animate-button-glow animate-button-float overflow-hidden rounded-full border-0"
           >
-            <Play className="h-6 w-6 mr-3 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-            {isTranslating ? "Loading..." : t("beginGame")}
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-full"></div>
+
+            {/* Sparkle effects */}
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300"></div>
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500 delay-200"></div>
+
+            {/* Ripple effect on click */}
+            <div className="absolute inset-0 rounded-full overflow-hidden">
+              <div className="absolute inset-0 bg-white/20 transform scale-0 group-active:scale-100 transition-transform duration-300 ease-out"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 flex items-center">
+              <Play className="h-6 w-6 mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 group-hover:text-yellow-300" />
+              <span className="group-hover:tracking-wider transition-all duration-300">
+                {isTranslating ? "Loading..." : t("beginGame")}
+              </span>
+            </div>
+
+            {/* Border glow effect */}
+            <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-white/30 transition-all duration-300"></div>
           </Button>
           <p className="text-muted-foreground mt-6 text-lg font-light">
             {t("noRegistration")}
@@ -291,7 +311,8 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <p className="text-base text-muted-foreground font-light">
-                {t("craftedBy")}
+                Crafted by <span className="font-bold">alpi</span> for{" "}
+                <span className="font-bold">you</span>
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {t("craftedDesc")}

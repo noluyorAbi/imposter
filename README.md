@@ -5,20 +5,52 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.9-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat)](https://github.com/noluyorAbi/imposter)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Play_Now-brightgreen?style=flat)](https://imposter.adatepe.dev)
 
-A modern, interactive word game where players must identify the imposter among them. Built with Next.js, TypeScript, and Tailwind CSS for a seamless gaming experience.
+A social deduction word game where players must identify the imposter among them. Built with Next.js, TypeScript, and Tailwind CSS.
+
+**🌐 Live Demo:** [https://imposter.adatepe.dev](https://imposter.adatepe.dev)
+
+## 🎯 Motivation
+
+This project was born from a passion for creating engaging social experiences that bring people together. The motivation behind the Imposter Word Game stems from several key principles:
+
+### 🤝 **Social Connection**
+
+- **Bridging Digital and Physical**: In an increasingly digital world, creating games that encourage real human interaction and conversation
+- **Universal Appeal**: A game that transcends language barriers and cultural differences through simple, intuitive gameplay
+- **Accessibility**: No downloads, no registration, just pure gaming enjoyment accessible to everyone
+
+### 🧠 **Cognitive Challenge**
+
+- **Strategic Thinking**: Players must balance deception with believability, creating a unique psychological challenge
+- **Communication Skills**: Encourages clear, concise communication and active listening
+- **Social Intelligence**: Develops skills in reading people and understanding group dynamics
+
+### 💻 **Technical Excellence**
+
+- **Modern Web Technologies**: Showcasing the power and capabilities of Next.js, React, and TypeScript
+- **Performance**: Optimized for smooth gameplay across all devices and network conditions
+- **User Experience**: Intuitive design that puts the focus on the game, not the interface
+
+### 🌍 **Global Reach**
+
+- **Multi-language Support**: Breaking down language barriers to create a truly global gaming experience
+- **Cultural Inclusivity**: Word categories that resonate across different cultures and backgrounds
+- **Community Building**: Creating shared experiences that bring diverse groups together
+
+The goal is to demonstrate that web applications can be both technically sophisticated and genuinely fun, proving that modern web technologies are capable of creating experiences that rival traditional gaming platforms.
 
 ## ✨ Features
 
-- 🎮 **Multi-language Support** - Play in multiple languages
-- 🎯 **Multiple Categories** - Food, Animals, Movies & TV, Sports & Games, and more
-- ⏱️ **Timer System** - Dynamic countdown for each round
+- 🌍 **Multi-language Support** - English, German, and Turkish
+- 🎯 **15 Word Categories** - Food, Animals, Movies & TV, Sports & Games, Places, Jobs & Professions, Objects & Things, Vehicles, Holidays, School, Silly & Random, Fantasy, Technology, Nature, and Music
+- ⏱️ **Timer System** - Elapsed time tracking during gameplay
 - 🎭 **Imposter Mechanics** - Hidden roles with strategic gameplay
-- 🎨 **Modern UI** - Clean, flat design with smooth animations
-- 📱 **Responsive Design** - Works perfectly on desktop and mobile
-- 🌙 **Dark/Light Mode** - Automatic theme switching
-- 🎵 **Sound Effects** - Immersive audio feedback
+- 🎨 **Modern UI** - Clean design with smooth animations
+- 📱 **Responsive Design** - Works on desktop and mobile
+- 🌙 **Dark/Light Mode** - Theme switching support
+- 🎮 **3+ Players** - Designed for group gameplay
 
 ## 🚀 Quick Start
 
@@ -51,9 +83,11 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the game in your browser.
 
+**🌐 Live Demo:** [https://imposter.adatepe.dev](https://imposter.adatepe.dev)
+
 ## 🎯 How to Play
 
-1. **Setup**: Choose your language and add players
+1. **Setup**: Choose your language (English, German, or Turkish) and add players
 2. **Word Selection**: Pick a category and word for the round
 3. **Role Assignment**: Players receive cards - most get the same word, one gets "IMPOSTER"
 4. **Clue Phase**: Players give one-word clues about their word
@@ -95,6 +129,9 @@ imposter-word-game/
 │   ├── game-setup.tsx    # Game setup screen
 │   ├── game-play.tsx     # Main gameplay
 │   ├── game-end.tsx      # Game end screen
+│   ├── card-distribution.tsx # Card distribution
+│   ├── language-selector.tsx # Language selection
+│   ├── theme-provider.tsx # Theme provider
 │   └── welcome-screen.tsx # Welcome screen
 ├── lib/                  # Utility functions
 │   ├── translation.ts    # Multi-language support
@@ -105,28 +142,28 @@ imposter-word-game/
 └── public/               # Static assets
 ```
 
-## 🎨 Design System
+## 🌍 Supported Languages
 
-The game features a modern, flat design with:
+The game currently supports:
 
-- **Color Palette**: Clean, accessible colors
+- **English** 🇺🇸 (Default)
+- **German** 🇩🇪
+- **Turkish** 🇹🇷
+
+## 🎨 Design Features
+
+- **Modern UI**: Clean, flat design with smooth animations
+- **Responsive Layout**: Mobile-first design approach
+- **Theme Support**: Dark and light mode switching
 - **Typography**: Modern, readable fonts
 - **Spacing**: Consistent spacing system
-- **Animations**: Smooth, subtle transitions
-- **Responsive**: Mobile-first design approach
-
-## 🌍 Internationalization
-
-The game supports multiple languages through a comprehensive translation system:
-
-- English (default)
-- Turkish
-- Spanish
-- French
-- German
-- And more...
+- **Animations**: Subtle transitions and hover effects
 
 ## 🚀 Deployment
+
+### Live Demo
+
+The game is currently deployed and available at: **https://imposter.adatepe.dev**
 
 ### Vercel (Recommended)
 
@@ -185,7 +222,6 @@ If you have any questions or need help, please:
 
 - [Open an issue](https://github.com/noluyorAbi/imposter/issues)
 - [Start a discussion](https://github.com/noluyorAbi/imposter/discussions)
-- [Check the documentation](https://github.com/noluyorAbi/imposter/wiki)
 
 ---
 
@@ -193,6 +229,7 @@ If you have any questions or need help, please:
 
 **Made with ❤️ by the Imposter Game Team**
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Play_Now-brightgreen?style=flat)](https://imposter.adatepe.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/noluyorAbi/imposter)
 [![Issues](https://img.shields.io/badge/Issues-Open-orange?style=flat)](https://github.com/noluyorAbi/imposter/issues)
 [![Stars](https://img.shields.io/badge/Stars-⭐-yellow?style=flat)](https://github.com/noluyorAbi/imposter/stargazers)

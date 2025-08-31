@@ -61,9 +61,36 @@ export function GamePlay({
           <p className="text-xl sm:text-2xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto leading-relaxed">
             {translateText(
               "The investigation begins. Trust no one. Question everything.",
-              language,
+              language
             )}
           </p>
+
+          {/* Starting Player Display */}
+          {gameData.startingPlayerIndex !== undefined && (
+            <div className="mb-8 p-6 bg-gradient-to-r from-primary/15 to-primary/10 rounded-xl border border-primary/30 shadow-lg">
+              <div className="text-center">
+                <div className="text-lg font-semibold text-primary mb-2">
+                  {translateText("Discussion starts with:", language)}
+                </div>
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/20 to-primary/15 rounded-full border border-primary/40">
+                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    {gameData.players[gameData.startingPlayerIndex].name
+                      .charAt(0)
+                      .toUpperCase()}
+                  </div>
+                  <span className="text-xl font-bold text-primary">
+                    {gameData.players[gameData.startingPlayerIndex].name}
+                  </span>
+                </div>
+                <div className="text-sm text-muted-foreground mt-3">
+                  {translateText(
+                    "They can begin the discussion whenever ready",
+                    language
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="flex items-center justify-center">
             <Badge
@@ -88,7 +115,7 @@ export function GamePlay({
                   <div className="text-base font-normal text-muted-foreground">
                     {translateText(
                       "Discuss, deduce, and discover the truth",
-                      language,
+                      language
                     )}
                   </div>
                 </div>
@@ -96,7 +123,7 @@ export function GamePlay({
               <CardDescription className="text-base font-light">
                 {translateText(
                   "One among you knows nothing. Find them through careful questioning and observation.",
-                  language,
+                  language
                 )}
               </CardDescription>
             </CardHeader>
@@ -138,7 +165,7 @@ export function GamePlay({
           <p className="text-sm text-muted-foreground mt-4 font-light">
             {translateText(
               "Ready to reveal the truth? End the round when consensus is reached.",
-              language,
+              language
             )}
           </p>
         </div>

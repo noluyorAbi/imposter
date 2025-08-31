@@ -280,6 +280,22 @@ const UI_TRANSLATIONS = {
     de: "Diskussion beginnen",
     tr: "Tartışmayı Başlat",
   },
+  "Discussion will start with a random player": {
+    de: "Die Diskussion beginnt mit einem zufälligen Spieler",
+    tr: "Tartışma rastgele bir oyuncu ile başlayacak",
+  },
+  "Anyone can start, including imposters": {
+    de: "Jeder kann anfangen, einschließlich der Betrüger",
+    tr: "Herkes başlayabilir, sahtekarlar dahil",
+  },
+  "Discussion starts with:": {
+    de: "Die Diskussion beginnt mit:",
+    tr: "Tartışma şununla başlıyor:",
+  },
+  "They can begin the discussion whenever ready": {
+    de: "Sie können die Diskussion beginnen, wann sie bereit sind",
+    tr: "Hazır olduklarında tartışmayı başlatabilirler",
+  },
   "New Word": {
     de: "Neues Wort",
     tr: "Yeni Kelime",
@@ -884,13 +900,11 @@ const WORD_TRANSLATIONS = {
   // Technology
   Laptop: { de: "Laptop", tr: "Dizüstü" },
   TV: { de: "Fernseher", tr: "Televizyon" },
-  Camera: { de: "Kamera", tr: "Kamera" },
   Tablet: { de: "Tablet", tr: "Tablet" },
   Mouse: { de: "Maus", tr: "Fare" },
   Keyboard: { de: "Tastatur", tr: "Klavye" },
   Watch: { de: "Uhr", tr: "Saat" },
   Remote: { de: "Fernbedienung", tr: "Kumanda" },
-  Drone: { de: "Drohne", tr: "Drone" },
   Robot: { de: "Roboter", tr: "Robot" },
   Headphones: { de: "Kopfhörer", tr: "Kulaklık" },
   Printer: { de: "Drucker", tr: "Yazıcı" },
@@ -1072,7 +1086,7 @@ export function translateText(text: string, targetLanguage: string): string {
 
 export function translateWordList(
   words: string[],
-  targetLanguage: string,
+  targetLanguage: string
 ): string[] {
   if (targetLanguage === "en") return words;
 

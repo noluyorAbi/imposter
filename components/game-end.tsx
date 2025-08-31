@@ -91,7 +91,7 @@ export function GameEnd({
                     {gameData.players.length}{" "}
                     {translateText(
                       "players participated in this round",
-                      language,
+                      language
                     )}
                   </span>
                 </div>

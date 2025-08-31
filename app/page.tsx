@@ -31,6 +31,7 @@ export interface GameData {
   imposterCount: number;
   language: Language; // Added language to game data
   useClue: boolean; // Added clue option
+  startingPlayerIndex?: number; // Random player who starts the discussion
 }
 
 export default function ImposterWordGame() {
@@ -60,7 +61,7 @@ export default function ImposterWordGame() {
     word: string,
     category: string,
     imposterCount: number,
-    useClue: boolean,
+    useClue: boolean
   ) => {
     const imposterIndices = new Set<number>();
     while (imposterIndices.size < imposterCount) {
@@ -89,6 +90,15 @@ export default function ImposterWordGame() {
   };
 
   const startPlaying = () => {
+    // Randomly select a starting player for the discussion
+    const randomStartingPlayerIndex = Math.floor(
+      Math.random() * gameData.players.length
+    );
+
+    setGameData((prev) => ({
+      ...prev,
+      startingPlayerIndex: randomStartingPlayerIndex,
+    }));
     setGameState("playing");
   };
 
@@ -110,6 +120,7 @@ export default function ImposterWordGame() {
       imposterCount: 1,
       language: SUPPORTED_LANGUAGES[0], // Reset language to English
       useClue: false, // Reset clue option
+      startingPlayerIndex: undefined,
     });
     setGameState("welcome");
   };
@@ -138,6 +149,7 @@ export default function ImposterWordGame() {
       clues: [],
       currentPlayerIndex: 0,
       timeRemaining: 300,
+      startingPlayerIndex: undefined,
     });
     setGameState("cards");
   };

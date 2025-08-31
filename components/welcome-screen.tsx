@@ -31,10 +31,10 @@ interface WelcomeScreenProps {
 
 export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(
-    SUPPORTED_LANGUAGES[0]
+    SUPPORTED_LANGUAGES[0],
   );
   const [translations, setTranslations] = useState<{ [key: string]: string }>(
-    {}
+    {},
   );
   const [isTranslating, setIsTranslating] = useState(false);
 
@@ -90,7 +90,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
         try {
           newTranslations[key] = await translateText(
             text,
-            selectedLanguage.code
+            selectedLanguage.code,
           );
         } catch (error) {
           newTranslations[key] = text;

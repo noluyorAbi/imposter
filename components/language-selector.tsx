@@ -1,18 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Globe, ChevronDown } from "lucide-react"
-import { SUPPORTED_LANGUAGES, type Language } from "@/lib/translation"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Globe, ChevronDown } from "lucide-react";
+import { SUPPORTED_LANGUAGES, type Language } from "@/lib/translation";
 
 interface LanguageSelectorProps {
-  selectedLanguage: Language
-  onLanguageChange: (language: Language) => void
+  selectedLanguage: Language;
+  onLanguageChange: (language: Language) => void;
 }
 
-export function LanguageSelector({ selectedLanguage, onLanguageChange }: LanguageSelectorProps) {
-  const [isOpen, setIsOpen] = useState(false)
+export function LanguageSelector({
+  selectedLanguage,
+  onLanguageChange,
+}: LanguageSelectorProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="relative">
@@ -24,7 +27,9 @@ export function LanguageSelector({ selectedLanguage, onLanguageChange }: Languag
         <Globe className="h-4 w-4" />
         <span className="text-lg">{selectedLanguage.flag}</span>
         <span className="font-medium">{selectedLanguage.name}</span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown
+          className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+        />
       </Button>
 
       {isOpen && (
@@ -36,8 +41,8 @@ export function LanguageSelector({ selectedLanguage, onLanguageChange }: Languag
                   key={language.code}
                   variant="ghost"
                   onClick={() => {
-                    onLanguageChange(language)
-                    setIsOpen(false)
+                    onLanguageChange(language);
+                    setIsOpen(false);
                   }}
                   className={`flex items-center gap-3 justify-start p-3 h-auto hover:bg-muted/50 transition-all duration-200 ${
                     selectedLanguage.code === language.code ? "bg-muted" : ""
@@ -52,5 +57,5 @@ export function LanguageSelector({ selectedLanguage, onLanguageChange }: Languag
         </Card>
       )}
     </div>
-  )
+  );
 }

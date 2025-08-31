@@ -34,7 +34,7 @@ interface GameSetupProps {
     word: string,
     category: string,
     imposterCount: number,
-    useClue: boolean
+    useClue: boolean,
   ) => void;
   onBack: () => void;
   language?: string;
@@ -232,7 +232,7 @@ export function GameSetup({
                       size="sm"
                       onClick={() =>
                         setImposterCount(
-                          Math.min(maxImposters, imposterCount + 1)
+                          Math.min(maxImposters, imposterCount + 1),
                         )
                       }
                       disabled={imposterCount >= maxImposters}
@@ -280,7 +280,7 @@ export function GameSetup({
                   {useClue
                     ? translateText(
                         "The imposter will get a clue about the word",
-                        language
+                        language,
                       )
                     : translateText("No clues will be given", language)}
                 </div>

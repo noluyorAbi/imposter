@@ -60,7 +60,7 @@ export default function ImposterWordGame() {
     word: string,
     category: string,
     imposterCount: number,
-    useClue: boolean
+    useClue: boolean,
   ) => {
     const imposterIndices = new Set<number>();
     while (imposterIndices.size < imposterCount) {

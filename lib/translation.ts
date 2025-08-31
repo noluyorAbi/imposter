@@ -313,8 +313,6 @@ const UI_TRANSLATIONS = {
     tr: "Cihazı her oyuncuya geçirin",
   },
 
-
-   
   completed: {
     de: "abgeschlossen",
     tr: "tamamlandı",
@@ -900,7 +898,6 @@ const WORD_TRANSLATIONS = {
   Smartwatch: { de: "Smartwatch", tr: "Akıllı Saat" },
   "Video Game": { de: "Videospiel", tr: "Video Oyunu" },
   Calculator: { de: "Taschenrechner", tr: "Hesap Makinesi" },
-  Telescope: { de: "Teleskop", tr: "Teleskop" },
   Flashlight: { de: "Taschenlampe", tr: "El Feneri" },
   "3D Printer": { de: "3D-Drucker", tr: "3D Yazıcı" },
   "Virtual Reality": { de: "Virtuelle Realität", tr: "Sanal Gerçeklik" },
@@ -1075,7 +1072,7 @@ export function translateText(text: string, targetLanguage: string): string {
 
 export function translateWordList(
   words: string[],
-  targetLanguage: string
+  targetLanguage: string,
 ): string[] {
   if (targetLanguage === "en") return words;
 

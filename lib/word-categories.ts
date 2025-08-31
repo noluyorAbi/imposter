@@ -1,4 +1,4 @@
-import { translateText } from "./translation"
+import { translateText } from "./translation";
 
 export const wordCategories: Record<string, string[]> = {
   Food: [
@@ -477,46 +477,56 @@ export const wordCategories: Record<string, string[]> = {
     "Mime",
     "Shakespeare",
   ],
-}
+};
 
 export function getRandomWord(category: string, language = "en"): string {
-  const words = wordCategories[category]
-  let selectedWord: string
+  const words = wordCategories[category];
+  let selectedWord: string;
 
   if (!words || words.length === 0) {
     // Fallback to a random category if the specified one doesn't exist
-    const categories = Object.keys(wordCategories)
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)]
-    const fallbackWords = wordCategories[randomCategory]
-    selectedWord = fallbackWords[Math.floor(Math.random() * fallbackWords.length)]
+    const categories = Object.keys(wordCategories);
+    const randomCategory =
+      categories[Math.floor(Math.random() * categories.length)];
+    const fallbackWords = wordCategories[randomCategory];
+    selectedWord =
+      fallbackWords[Math.floor(Math.random() * fallbackWords.length)];
   } else {
-    selectedWord = words[Math.floor(Math.random() * words.length)]
+    selectedWord = words[Math.floor(Math.random() * words.length)];
   }
 
   // Translate the word if language is not English
   if (language !== "en") {
-    return translateText(selectedWord, language)
+    return translateText(selectedWord, language);
   }
 
-  return selectedWord
+  return selectedWord;
 }
 
-export function getRandomWordFromRandomCategory(language = "en"): { word: string; category: string } {
-  const categories = Object.keys(wordCategories)
-  const randomCategory = categories[Math.floor(Math.random() * categories.length)]
-  const words = wordCategories[randomCategory]
-  const randomWord = words[Math.floor(Math.random() * words.length)]
+export function getRandomWordFromRandomCategory(language = "en"): {
+  word: string;
+  category: string;
+} {
+  const categories = Object.keys(wordCategories);
+  const randomCategory =
+    categories[Math.floor(Math.random() * categories.length)];
+  const words = wordCategories[randomCategory];
+  const randomWord = words[Math.floor(Math.random() * words.length)];
 
   // Translate the word if language is not English
-  const translatedWord = language !== "en" ? translateText(randomWord, language) : randomWord
+  const translatedWord =
+    language !== "en" ? translateText(randomWord, language) : randomWord;
 
   return {
     word: translatedWord,
     category: randomCategory,
-  }
+  };
 }
 
-export function translateCategoryName(category: string, language: string): string {
-  if (language === "en") return category
-  return translateText(category, language)
+export function translateCategoryName(
+  category: string,
+  language: string,
+): string {
+  if (language === "en") return category;
+  return translateText(category, language);
 }

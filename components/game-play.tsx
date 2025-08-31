@@ -61,7 +61,7 @@ export function GamePlay({
           <p className="text-xl sm:text-2xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto leading-relaxed">
             {translateText(
               "The investigation begins. Trust no one. Question everything.",
-              language
+              language,
             )}
           </p>
 
@@ -88,7 +88,7 @@ export function GamePlay({
                   <div className="text-base font-normal text-muted-foreground">
                     {translateText(
                       "Discuss, deduce, and discover the truth",
-                      language
+                      language,
                     )}
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export function GamePlay({
               <CardDescription className="text-base font-light">
                 {translateText(
                   "One among you knows nothing. Find them through careful questioning and observation.",
-                  language
+                  language,
                 )}
               </CardDescription>
             </CardHeader>
@@ -138,7 +138,7 @@ export function GamePlay({
           <p className="text-sm text-muted-foreground mt-4 font-light">
             {translateText(
               "Ready to reveal the truth? End the round when consensus is reached.",
-              language
+              language,
             )}
           </p>
         </div>

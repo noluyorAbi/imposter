@@ -314,7 +314,7 @@ const UI_TRANSLATIONS = {
   },
 
 
-  
+   
   completed: {
     de: "abgeschlossen",
     tr: "tamamlandı",
@@ -680,8 +680,6 @@ const WORD_TRANSLATIONS = {
   "Jurassic Park": { de: "Jurassic Park", tr: "Jurassic Park" },
   "Black Panther": { de: "Black Panther", tr: "Kara Panter" },
   Aladdin: { de: "Aladdin", tr: "Aladdin" },
-  "Lion King": { de: "König der Löwen", tr: "Aslan Kral" },
-  "Finding Nemo": { de: "Findet Nemo", tr: "Kayıp Balık Nemo" },
   "E.T.": { de: "E.T.", tr: "E.T." },
   Cinderella: { de: "Aschenputtel", tr: "Külkedisi" },
   Encanto: { de: "Encanto", tr: "Encanto" },
@@ -694,7 +692,6 @@ const WORD_TRANSLATIONS = {
   "Schindler's List": { de: "Schindlers Liste", tr: "Schindler'in Listesi" },
   Amélie: { de: "Die fabelhafte Welt der Amélie", tr: "Amélie" },
   Jaws: { de: "Der weiße Hai", tr: "Çeneler" },
-  Titanic: { de: "Titanic", tr: "Titanik" },
   "La La Land": { de: "La La Land", tr: "La La Land" },
 
   // Sports & Games
@@ -922,7 +919,6 @@ const WORD_TRANSLATIONS = {
   Sun: { de: "Sonne", tr: "Güneş" },
   Moon: { de: "Mond", tr: "Ay" },
   Flower: { de: "Blume", tr: "Çiçek" },
-  Mountain: { de: "Berg", tr: "Dağ" },
   Ocean: { de: "Ozean", tr: "Okyanus" },
   Rainbow: { de: "Regenbogen", tr: "Gökkuşağı" },
   Storm: { de: "Sturm", tr: "Fırtına" },
@@ -948,17 +944,14 @@ const WORD_TRANSLATIONS = {
   Fossil: { de: "Fossil", tr: "Fosil" },
 
   // Music
-  Guitar: { de: "Gitarre", tr: "Gitar" },
   Piano: { de: "Klavier", tr: "Piyano" },
   Song: { de: "Lied", tr: "Şarkı" },
   Dance: { de: "Tanz", tr: "Dans" },
   Drum: { de: "Trommel", tr: "Davul" },
-  Radio: { de: "Radio", tr: "Radyo" },
   Violin: { de: "Geige", tr: "Keman" },
   Trumpet: { de: "Trompete", tr: "Trompet" },
   Orchestra: { de: "Orchester", tr: "Orkestra" },
   Karaoke: { de: "Karaoke", tr: "Karaoke" },
-  Singer: { de: "Sänger", tr: "Şarkıcı" },
   Movie: { de: "Film", tr: "Film" },
   Game: { de: "Spiel", tr: "Oyun" },
   Stage: { de: "Bühne", tr: "Sahne" },

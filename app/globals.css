@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Luxury black and white color palette */
+  --background: #ffffff; /* Pure white background */
+  --foreground: #000000; /* Pure black text */
+  --card: #f5f5f5; /* Light gray cards */
+  --card-foreground: #000000; /* Black card text */
+  --popover: #ffffff; /* White popovers */
+  --popover-foreground: #000000; /* Black popover text */
+  --primary: #000000; /* Black primary */
+  --primary-foreground: #ffffff; /* White on primary */
+  --secondary: #a9a9a9; /* Dark gray secondary */
+  --secondary-foreground: #ffffff; /* White on secondary */
+  --muted: #c0c0c0; /* Silver muted */
+  --muted-foreground: #000000; /* Black on muted */
+  --accent: #c0c0c0; /* Silver accent */
+  --accent-foreground: #000000; /* Black on accent */
+  --destructive: #ff0000; /* Red for destructive */
+  --destructive-foreground: #ffffff; /* White on destructive */
+  --border: #a9a9a9; /* Dark gray borders */
+  --input: #f5f5f5; /* Light gray inputs */
+  --ring: #c0c0c0; /* Silver focus ring */
+  --chart-1: #000000;
+  --chart-2: #a9a9a9;
+  --chart-3: #c0c0c0;
+  --chart-4: #ffffff;
+  --chart-5: #f5f5f5;
+  --radius: 0.5rem;
+  --sidebar: #f5f5f5;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #c0c0c0;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #a9a9a9;
+  --sidebar-ring: #c0c0c0;
+}
+
+.dark {
+  /* Dark mode with inverted luxury palette */
+  --background: #000000; /* Pure black background */
+  --foreground: #ffffff; /* Pure white text */
+  --card: #1a1a1a; /* Very dark gray cards */
+  --card-foreground: #ffffff; /* White card text */
+  --popover: #1a1a1a; /* Dark gray popovers */
+  --popover-foreground: #ffffff; /* White popover text */
+  --primary: #ffffff; /* White primary in dark mode */
+  --primary-foreground: #000000; /* Black on primary */
+  --secondary: #a9a9a9; /* Dark gray secondary */
+  --secondary-foreground: #000000; /* Black on secondary */
+  --muted: #666666; /* Medium gray muted */
+  --muted-foreground: #ffffff; /* White muted text */
+  --accent: #c0c0c0; /* Silver accent */
+  --accent-foreground: #000000; /* Black on accent */
+  --destructive: #ff0000; /* Red for destructive */
+  --destructive-foreground: #ffffff; /* White on destructive */
+  --border: #333333; /* Dark borders */
+  --input: #1a1a1a; /* Dark inputs */
+  --ring: #c0c0c0; /* Silver focus ring */
+  --chart-1: #ffffff;
+  --chart-2: #a9a9a9;
+  --chart-3: #c0c0c0;
+  --chart-4: #000000;
+  --chart-5: #1a1a1a;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #c0c0c0;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: #c0c0c0;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Luxury animations and transitions */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .animate-luxury-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-luxury-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced button animations */
+  .animate-button-pulse {
+    animation: buttonPulse 2s ease-in-out infinite;
+  }
+
+  .animate-button-glow {
+    animation: buttonGlow 3s ease-in-out infinite;
+  }
+
+  .animate-button-bounce {
+    animation: buttonBounce 0.6s ease-out;
+  }
+
+  .animate-button-shake {
+    animation: buttonShake 0.5s ease-in-out;
+  }
+
+  .animate-button-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-button-ripple::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .animate-button-ripple:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .animate-button-float {
+    animation: buttonFloat 3s ease-in-out infinite;
+  }
+
+  .animate-button-sparkle {
+    position: relative;
+  }
+
+  .animate-button-sparkle::after {
+    content: "✨";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 16px;
+    opacity: 0;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-button-sparkle:hover::after {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes buttonGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes buttonFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
